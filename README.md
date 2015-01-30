@@ -1,5 +1,7 @@
 # CachedCounter
 
+[![Build Status](https://travis-ci.org/crowdworks/cached_counter.svg?branch=master)](https://travis-ci.org/crowdworks/cached_counter)
+
 Cache Counter is an instantaneous but lock-friendly implementation of the counter.
 
 It allows to increment/decrement/get counts primarily saved in the database in a faster way.
