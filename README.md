@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/crowdworks/cached_counter.svg?branch=master)](https://travis-ci.org/crowdworks/cached_counter)
 [![Coverage Status](https://coveralls.io/repos/crowdworks/cached_counter/badge.svg?branch=master)](https://coveralls.io/r/crowdworks/cached_counter?branch=master)
+[![Code Climate](https://codeclimate.com/github/crowdworks/cached_counter/badges/gpa.svg)](https://codeclimate.com/github/crowdworks/cached_counter)
 
 Cache Counter is an instantaneous but lock-friendly implementation of the counter.
 
