@@ -203,6 +203,7 @@ class CachedCounter
 
     # @see https://github.com/rails/rails/blob/v3.2.18/activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb#L242
     # @see https://github.com/rails/rails/blob/v4.1.4/activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb#L248
+    # @see https://github.com/rails/rails/blob/v5.2.2/activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb#L279
     @model_class.connection.add_transaction_record(listener)
   end
 
@@ -246,6 +247,10 @@ class CachedCounter
     # @see Rails 3: https://github.com/rails/rails/blob/v3.2.18/activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb#L372
     # @see Rails 4: https://github.com/rails/rails/blob/v4.1.4/activerecord/lib/active_record/connection_adapters/abstract/transaction.rb#L147
     def committed!
+      nil
+    end
+
+    def before_committed!
       nil
     end
 
