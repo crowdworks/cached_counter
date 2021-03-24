@@ -246,7 +246,7 @@ class CachedCounter
 
     # @see Rails 3: https://github.com/rails/rails/blob/v3.2.18/activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb#L372
     # @see Rails 4: https://github.com/rails/rails/blob/v4.1.4/activerecord/lib/active_record/connection_adapters/abstract/transaction.rb#L147
-    def committed!
+    def committed!(should_run_callbacks: true)
       nil
     end
 
@@ -259,6 +259,11 @@ class CachedCounter
     # @see Rails 4: https://github.com/rails/rails/blob/v4.1.4/activerecord/lib/active_record/connection_adapters/abstract/transaction.rb#L136
     def rolledback!(force_restore_state = false)
       CachedCounter.new(model_class: @model_class, id: @id, attribute: @attribute).send(@method)
+    end
+
+    # support Rails6
+    def trigger_transactional_callbacks?
+      true
     end
   end
 
